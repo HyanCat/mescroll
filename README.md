@@ -89,18 +89,22 @@ NPM 安装命令:
 
 ### Vue单组件版本引用
 
-#### 1. import Mescroll from 'vue-mescroll/mescroll';
+#### 1. 
+
+```
+    import Mescroll from 'vue-mescroll/mescroll'
+```
 
 #### 2. 布局结构:  
 ```
         <me-scroll
-			ref="mescroll"
-			:id="mescroll"	//id默认为 mescroll
-			:opt-up="{}" //up 参数配置(isBounce 默认未false)
-			:opt-down="{}" //down 参数配置
-			:callback="() => {}" //统一回调（up、down均使用此回调）
-			:up-callback="() => {}" //up 回调
-			:down-callback="() => {}"> //down 回调
+	    ref="mescroll"
+	    :id="mescroll"	//id默认为 mescroll
+	    :opt-up="{}" //up 参数配置(isBounce 默认未false)
+	    :opt-down="{}" //down 参数配置
+	    :callback="() => {}" //统一回调（up、down均使用此回调）
+	    :up-callback="() => {}" //up 回调
+	    :down-callback="() => {}"> //down 回调
 			
             //列表内容,如:<ul>列表数据</ul> ...
 			
