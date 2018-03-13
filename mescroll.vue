@@ -3,7 +3,7 @@
  * @Author: liangzc 
  * @Date: 2018-03-13 09:59:44 
  * @Last Modified by: liangzc
- * @Last Modified time: 2018-03-13 14:07:58
+ * @Last Modified time: 2018-03-13 15:13:56
  */
 <template>
   <div :id="id"
@@ -98,6 +98,7 @@ export default {
       empty.warpId =
         typeof empty.warpId !== 'undefined' ? empty.warpId : this.id;
       optUp.empty = empty;
+      optUp.page = Object.assign({ num: 1, size: 20 }, optUp.page);
       return optUp;
     },
     downOption() {
