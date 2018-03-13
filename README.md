@@ -54,7 +54,14 @@ NPM 安装命令:
     npm install mescroll.js
 ```  
 
+#### Vue单组件
+```
+    npm install vue-mescroll
+``` 
+
 ## 快速入门 :
+
+### JS 版本引用
 
 #### 1. 引用 **mescroll.min.css** , **mescroll.min.js**
 
@@ -76,6 +83,32 @@ NPM 安装命令:
 		}
 	});
 ```  
+
+### Vue单组件版本引用
+
+#### 1. import Mescroll from 'vue-mescroll/mescroll';
+
+#### 2. 布局结构:  
+```
+        <me-scroll
+			ref="mescroll"
+			:id="mescroll"	//id默认为 mescroll
+			:opt-up="{}" //up 参数配置(isBounce 默认未false)
+			:opt-down="{}" //down 参数配置
+			:callback="() => {}" //统一回调（up、down均使用此回调）
+			:up-callback="() => {}" //up 回调
+			:down-callback="() => {}"> //down 回调
+			
+            //列表内容,如:<ul>列表数据</ul> ...
+			
+        </me-scroll>  
+```  
+
+#### 3. 获取MeScroll对象实例(ref 可用):  
+```
+        this.$refs.mescroll.instance
+```  
+
 ###### 温馨提示:
 ###### 1. 如果您的下拉刷新是重置列表数据,那么down完全可以不用配置,具体用法参考<a class="blue" href="http://www.mescroll.com/demo.html?v=1219">第一个基础案例</a>
 ###### 解析: down内部默认调用的是mescroll.resetUpScroll(),而resetUpScroll会将page.num=1,再触发up.callback,从而实现刷新列表数据
