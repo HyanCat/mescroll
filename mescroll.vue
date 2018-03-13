@@ -3,7 +3,7 @@
  * @Author: liangzc 
  * @Date: 2018-03-13 09:59:44 
  * @Last Modified by: liangzc
- * @Last Modified time: 2018-03-13 11:37:19
+ * @Last Modified time: 2018-03-13 14:07:58
  */
 <template>
   <div :id="id"
@@ -69,33 +69,55 @@ export default {
       require('./mescroll.min.css');
       window._Mescroll = require('./mescroll.min.js');
     }
-    if (this.optUp) {
-      this.optUp.isBounce =
-        typeof this.optUp.isBounce !== 'undefined' ?
-          this.optUp.isBounce :
-          false;
-      this.optUp.callback =
-        typeof this.optUp.callback !== 'undefined' ?
-          this.optUp.callback :
-          this.upCallback || this.callback;
-      let empty = this.optUp.empty || {};
-      empty.warpId =
-        typeof empty.warpId !== 'undefined' ? empty.warpId : this.id;
-      this.optUp.empty = empty;
+
+    if (!this.downCallback && !this.upCallback && this.callback) {
+      if (!this.isEmptyObject(this.upOption)) {
+        this.upOption.callback = this.callback;
+        this.downOption.use = false;
+      } else if (!this.isEmptyObject(this.downOption)) {
+        this.downOption.callback = this.callback;
+        this.upOption.use = false;
+      }
     }
-
-    this.optDown &&
-      (this.optDown.callback =
-        typeof this.optDown.callback !== 'undefined' ?
-          this.optDown.callback :
-          this.downCallback || this.callback);
-
+    this.upOption.auto = !(this.downOption.callback && this.upOption.callback);
     this.instance = new window._Mescroll(this.id, {
-      down: this.optDown,
-      up: this.optUp
+      down: this.downOption,
+      up: this.upOption
     });
   },
-  methods: {}
+  computed: {
+    upOption() {
+      let optUp = this.optUp || {};
+      optUp.isBounce =
+        typeof optUp.isBounce !== 'undefined' ? optUp.isBounce : false;
+      optUp.callback =
+        typeof optUp.callback !== 'undefined' ?
+          optUp.callback :
+          this.upCallback;
+      let empty = optUp.empty || {};
+      empty.warpId =
+        typeof empty.warpId !== 'undefined' ? empty.warpId : this.id;
+      optUp.empty = empty;
+      return optUp;
+    },
+    downOption() {
+      let optDown = this.optDown || {};
+      optDown.callback =
+        typeof optDown.callback !== 'undefined' ?
+          optDown.callback :
+          this.downCallback;
+      return optDown;
+    }
+  },
+  methods: {
+    isEmptyObject(obj) {
+      let name;
+      for (name in obj) {
+        return false;
+      }
+      return true;
+    }
+  }
 };
 </script>
 <style lang="scss">
