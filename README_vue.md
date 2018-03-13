@@ -22,7 +22,7 @@
         <me-scroll
 			ref="mescroll"
 			:id="mescroll"	//id默认为 mescroll
-			:opt-up="{}" //up 参数配置(isBounce 默认未false)
+			:opt-up="{}" //up 参数配置(isBounce 默认为 false, 默认 page:{num: 1, size: 20})
 			:opt-down="{}" //down 参数配置
 			:callback="() => {}" //统一回调（配置 opt-up 时，为上拉回调，下拉失效;配置 opt-down 时，为下拉回调，上拉失效;均不配置不生效）
 			:up-callback="() => {}" //up 回调
