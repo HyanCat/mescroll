@@ -36,6 +36,8 @@
 #### 3. 获取MeScroll对象实例(ref 可用):  
 ```
         this.$refs.mescroll.instance
+        this.$refs.mescroll.instance.endSuccess()
+	...
 ```  
 
 ###### 温馨提示:
