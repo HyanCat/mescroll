@@ -2,61 +2,7 @@
 ## mescroll -- 精致的下拉刷新和上拉加载js框架 (JS framework for pull-refresh and pull-up-loading)
 ## http://www.mescroll.com
 
-[Vue项目单组件引用请看这里](https://github.com/mvpleung/mescroll/blob/master/README_vue.md)
-
-1. 原生js, 支持vue, 不依赖jquery,zepto
-
-2. 一套代码多端运行. 完美运行于android,iOS,手机浏览器,兼容PC主流浏览器
-
-3. 参数自由搭配, 随心定制, 轻松拓展
-
-4. 主流APP案例, 丰富经典
-
-5. 免费商用
-
-6. <a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=1067896895dabdf6cf11f4decb0be8bfd3687d3d208730bf2757238ba1948469">mescroll交流群</a>
-		
-
-## 目录:  
-
-* <a href="https://github.com/mescroll/mescroll/releases" target="_blank">最新版本:1.3.2 (2018-01-01) 重要升级</a> <br/><br/>
-* <a href="#功能亮点-">功能亮点 </a> <br/>
-* <a href="#快速入门-">快速入门 </a> <br/>
-* <a href="http://www.mescroll.com/preview.html?name=list-products-vue">vue的示例 </a> <br/>
-* <a href="#mescrollmjs和mescrollminjs">mescroll.m.js和mescroll.min.js </a> <br/><br/>
-* <a href="#基础案例-base-demos-"><b>基础案例 base demos</b></a> <br/>
-* <a href="#中级案例-intermediate-demos-"><b>中级案例 intermediate demos</b></a> <br/>
-* <a href="#高级案例-senior-demos-"><b>高级案例 senior demos</b></a> <br/><br/>
-* <a href="#下载基础中级案例源码-">下载基础中级案例 </a> <br/>
-* <a href="#获取高级案例源码-">获取高级案例 </a> <br/><br/>
-* <a href="#api文档-">API文档 </a> <br/>
-* <a href="#常用方法-">常用方法 </a> <br/>
-* <a href="#其他方法-">其他方法 </a> <br/><br/>
-* <a href="http://www.mescroll.com/qa.html?v=1219">常见问题 </a> <br/>
-* <a href="http://www.mescroll.com/reward.html#tagRank">打赏排行榜 </a> <br/>
-
-## 功能亮点 :
-
-1. 自动判断和提示列表无任何数据或无更多数据
-
-2. 支持监听列表滚动事件,无需手动判断处理列表的页码,时间等变量
-
-3. 可指定列表滚动到任何位置,附带平滑效果一键滚动到顶部或底部
-
-4. 可配置列表数据不满屏时,自动加载下一页  
-
-5. 一个界面可支持多个下拉刷新,上拉加载
-
-6. 可临时锁定下拉刷新和上拉加载  
-
 ## NPM
-#### 特别感谢 @<a href="https://github.com/channg">channg</a> 帮忙整理发布NPM
-<a href="https://www.npmjs.com/package/mescroll.js">https://www.npmjs.com/package/mescroll.js</a>
-NPM 安装命令:
-```
-    npm install mescroll.js
-```  
-
 #### Vue单组件
 ```
     npm install vue-mescroll
@@ -64,47 +10,20 @@ NPM 安装命令:
 
 ## 快速入门 :
 
-### JS 版本引用
-
-#### 1. 引用 **mescroll.min.css** , **mescroll.min.js**
-
-#### 2. 拷贝以下布局结构:  
-```
-        <div id="mescroll" class="mescroll"> //id可以改,而"mescroll"的class不能删
-            //列表内容,如:<ul>列表数据</ul> ...
-        </div>  
-```  
-
-#### 3. 创建MeScroll对象:  
-```
-        var mescroll = new MeScroll("mescroll", { //第一个参数"mescroll"对应上面布局结构div的id
-    		down: {
-			callback: downCallback //下拉刷新的回调,别写成downCallback(),多了括号就自动执行方法了
-		},
-		up: {
-			callback: upCallback //上拉加载回调,简写callback:function(page){upCallback(page);}
-		}
-	});
-```  
-
 ### Vue单组件版本引用
 
-#### 1. 
-
-```
-    import Mescroll from 'vue-mescroll/mescroll'
-```
+#### 1. import Mescroll from 'vue-mescroll/mescroll';
 
 #### 2. 布局结构:  
 ```
         <me-scroll
-	    ref="mescroll"
-	    :id="mescroll"	//id默认为 mescroll
-	    :opt-up="{}" //up 参数配置(isBounce 默认未false)
-	    :opt-down="{}" //down 参数配置
-	    :callback="() => {}" //统一回调（up、down均使用此回调）
-	    :up-callback="() => {}" //up 回调
-	    :down-callback="() => {}"> //down 回调
+			ref="mescroll"
+			:id="mescroll"	//id默认为 mescroll
+			:opt-up="{}" //up 参数配置(isBounce 默认未false)
+			:opt-down="{}" //down 参数配置
+			:callback="() => {}" //统一回调（up、down均使用此回调）
+			:up-callback="() => {}" //up 回调
+			:down-callback="() => {}"> //down 回调
 			
             //列表内容,如:<ul>列表数据</ul> ...
 			

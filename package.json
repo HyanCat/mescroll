@@ -1,18 +1,25 @@
 {
-  "name": "mescroll.js",
-  "version": "1.3.2",
+  "name": "vue-mescroll",
+  "version": "0.0.1",
   "description": "精致的下拉刷新和上拉加载 js框架.支持vue,完美运行于移动端和主流PC浏览器 ( a great JS framework for pull-refresh and pull-up-loading )",
   "main": "mescroll.min.js",
   "scripts": {
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mescroll/mescroll.git"
+    "url": "git+https://github.com/mvpleung/mescroll.git"
   },
-  "author": "wenju",
+  "keywords": [
+    "vue",
+    "mescroll",
+    "vue组件",
+    "下拉刷新",
+    "上拉加载"
+  ],
+  "author": "mvpleung",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mescroll/mescroll/issues"
   },
-  "homepage": "https://github.com/mescroll/mescroll#readme"
+  "homepage": "https://github.com/mvpleung/mescroll/tree/dev#readme"
 }
