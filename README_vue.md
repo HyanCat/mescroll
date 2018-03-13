@@ -12,7 +12,10 @@
 
 ### Vue单组件版本引用
 
-#### 1. import Mescroll from 'vue-mescroll/mescroll';
+#### 1. 
+```
+    import Mescroll from 'vue-mescroll/mescroll'
+```
 
 #### 2. 布局结构:  
 ```

@@ -2,7 +2,7 @@
 ## mescroll -- 精致的下拉刷新和上拉加载js框架 (JS framework for pull-refresh and pull-up-loading)
 ## http://www.mescroll.com
 
-[Vue项目单组件引用请看这里](https://github.com/mvpleung/mescroll/blob/master/README_vue.md)
+## [Vue项目单组件引用请看这里](https://github.com/mvpleung/mescroll/blob/master/README_vue.md)
 
 1. 原生js, 支持vue, 不依赖jquery,zepto
 
